@@ -4,26 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>My Portfolio | Thejas M</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <script src="path/to/your/script.js"></script>
-
+    
+    <!-- Boxicons for Premium Vector Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- 3D & Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   </head>
   <body>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg"></canvas>
+    
     <nav id="desktop-nav">
-      <div class="logo">Thejas M Achar</div>
+      <div class="logo">Thejas M</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Expertise</a></li>
+          <li><a href="#llm-pipeline">Pipeline</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo">Thejas M Achar</div>
+      <div class="logo">Thejas M</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -32,47 +43,43 @@
         </div>
         <ul class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Expertise</a></li>
+          <li><a href="#llm-pipeline" onclick="toggleMenu()">Pipeline</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
       </div>
     </nav>    
+    
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt=" profile picture" />
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="greeting">Hi, I'm</span><br>
+          <span class="name-gradient">Thejas M</span>
+        </h1>
+        <p class="hero-subtitle">Full-Stack AI & Backend Developer</p>
+        
+        <div class="hero-action">
+          <button class="hero-btn primary" onclick="window.open('./assets/resume.pdf')">
+            <i class='bx bxs-file-pdf'></i> Download CV
+          </button>
+          <button class="hero-btn secondary" onclick="location.href='./#contact'">
+            <i class='bx bx-message-dots'></i> Contact Info
+          </button>
+        </div>
+        
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/thejas-m-19366625a" target="_blank"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/thejasachar" target="_blank"><i class='bx bxl-github'></i></a>
+        </div>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Thejas M</h1>
-        <p class="section__text__p2">Web Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/thejas-m-19366625a'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/thejasachar'"
-          />
-        </div>
+      
+      <div class="hero-image-wrapper">
+        <div class="hero-glow"></div>
+        <img src="./assets/profile-pic.png" alt="Profile" class="profile-hero-img">
       </div>
     </section>
+    
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
@@ -87,316 +94,302 @@
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
+              <i class='bx bx-medal icon'></i>
               <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+              <p>Full-Stack AI <br />& Backend Focus</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
+              <i class='bx bxs-graduation icon'></i>
               <h3>Education</h3>
-              <p>B.Tech CSE Cybersecurity and IOT</p>
+              <p>B.Tech CSE (IoT & Cyber)<br />GPA: 9/10</p>
             </div>
           </div>
-          <div class="text-container">
+          <div class="text-container details-container" style="text-align: left; padding: 2rem 3rem;">
             <p>
-               Pursuing a BTech in Computer Science at REVA University, I've integrated academic insights with hands-on development, particularly excelling in CSS and HTML applications.</br></br>
-
-              As I navigate through complex programming paradigms, certifications like React js and proficiency in Django anchor my approach to problem-solving. With the Feynman technique as my learning compass, I aim to merge innovation with collaboration to push the boundaries of web development.
+              I am a passionate <b>Full-Stack AI & Backend Developer</b> currently pursuing my B.Tech in CSE at REVA University. My forte lies in building scalable backends and integrating robust AI/LLM automation directly into products.<br><br>
+              In my recent internship at VIDYAMITRA, I developed an AI-powered system integrating <b>GPT-4o, Gemini, LangChain, and Pinecone</b> to automate academic content workflows. This involved optimizing PostgreSQL databases and architecting CI/CD pipelines via <b>Docker and Jenkins</b>. I also have foundational front-end capabilities, having previously engineered highly accessible mobile applications for children with disabilities at Euphelity Pvt. Ltd.<br><br>
+              I thrive on pushing boundaries—whether it's leading hands-on GitHub workshops for my university club or competing in national-level GenAI hackathons!
             </p>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
+      <i class='bx bx-chevrons-down icon arrow' onclick="location.href='./#experience'"></i>
     </section>
+    
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Expertise</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title">Backend & AI</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>HTML</h3>
+                  <h3>Python & C</h3>
                   <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
+                  <h3>Django-Ninja</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
+                  <h3>PostgreSQL</h3>
                   <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>LangChain</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>Pinecone</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>GPT-4o & Gemini</h3>
+                  <p>Advanced</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
+            <h2 class="experience-sub-title">Frontend & DevOps</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>SQL</h3>
+                  <h3>React & Next.js</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
+                  <h3>JS, HTML, CSS</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class='bx bxs-badge-check icon'></i>
                 <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Django</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>ReactNative</h3>
+                  <h3>React Native</h3>
                   <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>Docker</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>Jenkins (CI/CD)</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class='bx bxs-badge-check icon'></i>
+                <div>
+                  <h3>AWS S3 & Git</h3>
+                  <p>Intermediate</p>
                 </div>
               </article>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
+      <i class='bx bx-chevrons-down icon arrow' onclick="location.href='./#llm-pipeline'"></i>
     </section>
+    
+    <!-- NEW: LLM PIPELINE SHOWCASE -->
+    <section id="llm-pipeline">
+      <p class="section__text__p1">How I Engineer</p>
+      <h1 class="title">AI Product Pipelines</h1>
+      <div class="pipeline-container">
+        
+        <!-- Node 1 -->
+        <div class="pipeline-node details-container">
+          <i class='bx bx-user-voice icon' style="color: #ff6b6b; font-size: 3rem;"></i>
+          <h3>User Query</h3>
+          <p>Client Request / Fast API</p>
+        </div>
+        
+        <div class="pipeline-connector">
+          <div class="line"></div>
+          <i class='bx bx-chevron-right'></i>
+        </div>
+        
+        <!-- Node 2 -->
+        <div class="pipeline-node details-container">
+          <i class='bx bx-brain icon' style="color: #4dabf7; font-size: 3rem;"></i>
+          <h3>LangChain</h3>
+          <p>Prompt Routing & Logic</p>
+        </div>
+        
+        <div class="pipeline-connector">
+          <div class="line"></div>
+          <i class='bx bx-chevron-right'></i>
+        </div>
+        
+        <!-- Node 3 -->
+        <div class="pipeline-node details-container">
+          <i class='bx bx-data icon' style="color: #4cd137; font-size: 3rem;"></i>
+          <h3>Pinecone</h3>
+          <p>RAG / Vector Retrieval</p>
+        </div>
+        
+        <div class="pipeline-connector">
+          <div class="line"></div>
+          <i class='bx bx-chevron-right'></i>
+        </div>
+        
+        <!-- Node 4 -->
+        <div class="pipeline-node details-container">
+          <i class='bx bx-chip icon' style="color: #9c88ff; font-size: 3rem;"></i>
+          <h3>GPT-4o & Gemini</h3>
+          <p>Generative Intelligence</p>
+        </div>
+        
+        <div class="pipeline-connector">
+          <div class="line"></div>
+          <i class='bx bx-chevron-right'></i>
+        </div>
+        
+        <!-- Node 5 -->
+        <div class="pipeline-node details-container">
+          <i class='bx bx-check-double icon' style="color: #fbc531; font-size: 3rem;"></i>
+          <h3>JSON Output</h3>
+          <p>Structured Analytics</p>
+        </div>
+        
+      </div>
+      <i class='bx bx-chevrons-down icon arrow' onclick="location.href='./#projects'"></i>
+    </section>
+
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container color-container">
+          <!-- Project 1 -->
+          <div class="details-container color-container" style="display: flex; flex-direction: column;">
             <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
+              <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem; font-size: 1.5rem;">Interactive Skill Enhancer</h2>
+            <p style="color: #c4c4c4; margin: 0 1rem 1.5rem 1rem; text-align: left; font-size: 0.95rem; line-height: 1.5; flex: 1;">
+              VR-based assistive education platform for students with ASD/ID integrating AI-powered NPC interactions.
+              <br><br><b style="color: #4dabf7">Tech:</b> Next.js, Unity, WebGL, Convai
+            </p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/thejasachar/hotel-management'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/thejasachar/hotel-management'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Live Demo
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
+
+          <!-- Project 2 -->
+          <div class="details-container color-container" style="display: flex; flex-direction: column;">
             <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
+              <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
             </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem; font-size: 1.5rem;">AI Resume Builder</h2>
+            <p style="color: #c4c4c4; margin: 0 1rem 1.5rem 1rem; text-align: left; font-size: 0.95rem; line-height: 1.5; flex: 1;">
+              Full-stack AI application using Gemini API to generate ATS-friendly resumes with structured outputs in real-time.
+              <br><br><b style="color: #4dabf7">Tech:</b> React, Node.js, TailwindCSS, Gemini API
+            </p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/thejasachar/NPC_Characters'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/thejasachar/NPC_Characters'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Live Demo
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
+
+          <!-- Project 3 -->
+          <div class="details-container color-container" style="display: flex; flex-direction: column;">
             <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
+              <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
             </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem; font-size: 1.5rem;">DevOps Monitor</h2>
+            <p style="color: #c4c4c4; margin: 0 1rem 1.5rem 1rem; text-align: left; font-size: 0.95rem; line-height: 1.5; flex: 1;">
+              Automated GitHub activity monitoring system that detects developer inactivity and triggers strict email alerts.
+              <br><br><b style="color: #4dabf7">Tech:</b> Python, GitHub API, Docker, SMTP
+            </p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/thejasachar/Text-to-Speech'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://thejasachar.github.io/Text-to-Speech/'"
-              >
+              <button class="hero-btn secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;" onclick="location.href='https://github.com/thejasachar'">
                 Live Demo
               </button>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
+      <i class='bx bx-chevrons-down icon arrow' onclick="location.href='./#contact'"></i>
     </section>
+    
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto: mthejasachar@outlook.com"> mthejasachar@outlook.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/thejas-m-19366625a">LinkedIn</a></p>
-        </div>
+      
+      <div class="contact-container">
+        <!-- Email Action Card -->
+        <a href="mailto:thejas0123@gmail.com" class="contact-card details-container">
+          <i class='bx bxs-envelope icon' style="color: #ff6b6b; font-size: 3.5rem;"></i>
+          <h3>Email</h3>
+          <p>thejas0123@gmail.com</p>
+          <span class="contact-link">Write a message <i class='bx bx-right-arrow-alt'></i></span>
+        </a>
+        
+        <!-- LinkedIn Action Card -->
+        <a href="https://www.linkedin.com/in/thejas-m-19366625a" target="_blank" class="contact-card details-container">
+          <i class='bx bxl-linkedin-square icon' style="color: #4dabf7; font-size: 3.5rem;"></i>
+          <h3>LinkedIn</h3>
+          <p>Thejas M</p>
+          <span class="contact-link" style="color: #4dabf7;">Connect with me <i class='bx bx-right-arrow-alt'></i></span>
+        </a>
       </div>
     </section>
+    
     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#experience">Expertise</a></li>
+            <li><a href="#llm-pipeline">Pipeline</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2023 Thejas. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 Thejas M. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>
